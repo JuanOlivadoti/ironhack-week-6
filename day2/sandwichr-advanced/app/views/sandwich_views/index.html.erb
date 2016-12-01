@@ -1,0 +1,7 @@
+<h1>Sandwiches</h1>
+
+<ul>
+	<% @sandwiches.each do |sandwich| %>
+		<li><%= sandwich.name %> <%= link_to "Details","/sandwiches/#{sandwich.id}/details"  %></li>
+	<% end %>
+</ul>

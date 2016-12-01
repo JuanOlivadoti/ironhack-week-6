@@ -1,0 +1,29 @@
+<div class="page-header">
+	<h1>Add new User</h1>
+</div>
+
+<% if @my_user.errors.any? %>
+	<ul>
+		<% @my_user.errors.full_messages.each do |error_msg| %>
+			<li><%= error_msg %></li>
+		<% end %>
+	</ul>
+	
+<% end %>
+
+<div class="row">
+	<div class="col-md-9">
+		<%= form_for(@my_user, html: {class: "form-inline"}) do |f| %>
+		<div class="form-group">
+			<%= f.label :name %>
+			<%= f.text_field :name, {class: "form-control"} %>	
+		</div>
+		<div class="form-group">
+			<%= f.label :email %>
+			<%= f.text_field :email, {class: "form-control"} %>	
+		</div>
+		<%= f.button "Create", {class: "btn btn-success"} %>
+<% end %>
+	</div>
+
+</div>

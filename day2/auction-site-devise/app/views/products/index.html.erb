@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-md-9">
+		<section>
+	    	<div class="list-group">
+				<h2>Products</h2>
+	  			<% @my_products.each do |product| %>
+			  		<a href=<%= products_details_path(product) %> class="list-group-item">
+			  		<h4>
+				    	<span class="label label-success datetime-margin">
+				    		<%= short_datetime(product.deadline) %>
+				    		<span class="glyphicon glyphicon-hourglass"></span>
+				    	</span>
+				    	<%= product.title %>
+			    	</h4>
+			  		</a>
+	  			<% end %>
+			</div>   
+		</section>
+	</div>
+</div>
